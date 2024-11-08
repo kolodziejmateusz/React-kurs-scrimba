@@ -1,11 +1,16 @@
 import { createRoot } from "react-dom/client";
+import "./main.css";
 
 function Header() {
   return (
     <header>
-      <nav>
-        <img src="./src/assets/react-logo.png" alt="react-logo" width="40px" />
-        <ul>
+      <nav className="nav">
+        <img
+          className="nav-logo"
+          src="./src/assets/react-logo.png"
+          alt="react-logo"
+        />
+        <ul className="nav-items">
           <li>Pricing</li>
           <li>About</li>
           <li>Contact</li>
