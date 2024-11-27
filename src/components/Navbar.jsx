@@ -5,7 +5,7 @@ export default function Navbar() {
         <nav className="nav">
           <img
             className="nav-logo"
-            src="/src/assets/react-logo.png"
+            src="/src/images/react-logo.png"
             alt="react-logo"
           />
           <span>ReactFacts</span>
