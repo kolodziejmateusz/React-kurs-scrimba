@@ -1,12 +1,14 @@
+import Header from "./components/Header";
+import Entry from "./components/Entry";
 import "./app.css";
-import Header from "./components/Header.jsx";
 
-function App() {
+export default function App() {
   return (
     <>
       <Header />
+      <main className="container">
+        <Entry />
+      </main>
     </>
   );
 }
-
-export default App;
