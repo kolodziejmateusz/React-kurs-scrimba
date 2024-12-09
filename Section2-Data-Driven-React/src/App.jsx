@@ -9,15 +9,7 @@ export default function App() {
       <Header />
       <main className="container">
         {data.map((item) => (
-          <Entry
-            key={item.id}
-            img={item.img}
-            title={item.title}
-            country={item.country}
-            googleMapsLink={item.googleMapsLink}
-            dates={item.dates}
-            text={item.text}
-          />
+          <Entry key={item.id} {...item} />
         ))}
       </main>
     </>
