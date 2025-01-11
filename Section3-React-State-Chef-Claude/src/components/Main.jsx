@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
+import IngredientsList from "./ingredientsList";
 
 export default function Main() {
   /**
@@ -51,25 +52,10 @@ export default function Main() {
       </form>
 
       {ingredients.length > 0 && (
-        <section>
-          <h2>Ingredients on hand:</h2>
-          <ul className="ingredients-list" aria-live="polite">
-            {ingredients.map((ingredient, index) => (
-              <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
-          {ingredients.length > 3 && (
-            <div className="get-recipe-container">
-              <div>
-                <h3>Ready for a recipe?</h3>
-                <p>Generate a recipe from your list of ingredients.</p>
-              </div>
-              <button onClick={() => setRecipeShown((prev) => !prev)}>
-                Get a recipe
-              </button>
-            </div>
-          )}
-        </section>
+        <IngredientsList
+          ingredients={ingredients}
+          setRecipeShown={setRecipeShown}
+        />
       )}
 
       {recipeShown && <ClaudeRecipe />}
