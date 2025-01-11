@@ -1,4 +1,4 @@
-export default function IngredientsList({ ingredients, setRecipeShown }) {
+export default function IngredientsList({ ingredients, getRecipe }) {
   return (
     <section>
       <h2>Ingredients on hand:</h2>
@@ -13,9 +13,7 @@ export default function IngredientsList({ ingredients, setRecipeShown }) {
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
-          <button onClick={() => setRecipeShown((prev) => !prev)}>
-            Get a recipe
-          </button>
+          <button onClick={() => getRecipe()}>Get a recipe</button>
         </div>
       )}
     </section>
