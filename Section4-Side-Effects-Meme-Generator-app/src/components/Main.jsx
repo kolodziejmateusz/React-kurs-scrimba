@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Main() {
   const [meme, setMeme] = useState({
@@ -7,12 +7,36 @@ export default function Main() {
     imageUrl: "http://i.imgflip.com/1bij.jpg",
   });
 
-  function handleChange(event) {
-    // console.log("changed");
-    const { value } = event.target;
-    // console.log(value);
+  const [memesArr, setMemesArr] = useState([]);
 
-    setMeme((prev) => ({ ...prev, topText: value }));
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setMemesArr(data.data.memes));
+  }, []);
+
+  /**
+   * Challenge:
+   * Get an array of memes from the imgflip API as soon as
+   * this component renders for the first time.
+   * Check the imgflip documentation for the correct URL.
+   * Save the array of memes (not the whole response
+   * data) to state. (For this app, we'll randomly choose
+   * one of the memes from this array when the user clicks
+   * the "Get a new meme image" button, but we'll do that in
+   * a separate challenge.)
+   *
+   * Hint: for now, don't try to use an async/await function.
+   * Instead, use `.then()` to resolve the promises
+   * from using `fetch`. We'll learn why after this challenge.
+   */
+
+  function handleChange(event) {
+    const { value, name } = event.currentTarget;
+    setMeme((prevMeme) => ({
+      ...prevMeme,
+      [name]: value,
+    }));
   }
 
   return (
@@ -25,6 +49,7 @@ export default function Main() {
             placeholder="One does not simply"
             name="topText"
             onChange={handleChange}
+            value={meme.topText}
           />
         </label>
 
@@ -35,6 +60,7 @@ export default function Main() {
             placeholder="Walk into Mordor"
             name="bottomText"
             onChange={handleChange}
+            value={meme.bottomText}
           />
         </label>
         <button>Get a new meme image 🖼</button>
