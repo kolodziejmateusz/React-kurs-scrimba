@@ -4,12 +4,7 @@ import IngredientsList from "./ingredientsList";
 import { getRecipeFromMistral } from "../ai";
 
 export default function Main() {
-  const [ingredients, setIngredients] = useState([
-    "makaron",
-    "zioła",
-    "kurczak",
-    "papryka",
-  ]);
+  const [ingredients, setIngredients] = useState([]);
 
   function addIngredients(formData) {
     const newIngredient = formData.get("ingredient");
