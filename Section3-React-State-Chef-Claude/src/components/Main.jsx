@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./ingredientsList";
 import { getRecipeFromMistral } from "../ai";
@@ -19,7 +19,12 @@ export default function Main() {
 
   const [recipe, setRecipe] = useState(null);
   const recipeSection = useRef(null);
-  console.log(recipeSection);
+
+  useEffect(() => {
+    if (recipe !== "" && recipeSection.current !== null) {
+      recipeSection.current.scrollIntoView();
+    }
+  }, [recipe]);
 
   async function getRecipe() {
     const generatedRecipe = await getRecipeFromMistral(ingredients);
