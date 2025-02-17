@@ -22,7 +22,13 @@ export default function Main() {
 
   useEffect(() => {
     if (recipe !== "" && recipeSection.current !== null) {
-      recipeSection.current.scrollIntoView();
+      // recipeSection.current.scrollIntoView({ behavior: "smooth" });
+      const yCoord =
+        recipeSection.current.getBoundingClientRect().top + window.scrollY;
+      window.scroll({
+        top: yCoord,
+        behavior: "smooth",
+      });
     }
   }, [recipe]);
 
