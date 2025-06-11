@@ -6,9 +6,40 @@ import "./App.css";
 export default function App() {
   const [isGameOn, setIsGameOn] = useState(false);
 
-  function startGame(e) {
+  /**
+   * Challenge:
+   * 1) Turn startGame into an async function.
+   * 2) Use the try...catch syntax and make a fetch request to the emoji API, using this url:
+   * "https://emojihub.yurace.pro/api/all/category/animals-and-nature". Store the response in a
+   * const "response".
+   * 3) Check if the response is ok.
+   *      a) If yes, store the fetched data in a const "data". Log the data to the console.
+   * Call setIsGameOn(true).
+   *      b) If no, throw an error with a custom error message, and inside the catch block, log
+   * the error message to the console.
+   * 💡 Hint: Remember the await keyword!
+   * ⚠️ Warning: The emojis rendered will still be those from the hardcoded array.
+   */
+
+  async function startGame(e) {
     e.preventDefault();
     setIsGameOn(true);
+
+    try {
+      console.log("try");
+      const response = await fetch(
+        "https://emojihub.yurace.pro/api/all/category/animals-and-nature"
+      );
+      if (!response.ok) {
+        throw new Error("Could not fetch data from API");
+      }
+
+      const data = await response.json();
+      console.log(data);
+      setIsGameOn(true);
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   function turnCard() {
