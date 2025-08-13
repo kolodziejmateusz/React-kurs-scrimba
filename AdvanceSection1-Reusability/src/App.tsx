@@ -1,12 +1,15 @@
 import "./App.css";
 import Button from "./components/Button";
+import { FaMoneyBill } from "react-icons/fa6";
 
 function App() {
   return (
     <>
       <main>
-        {/* <Button text="click" /> */}
-        <Button>Cześć</Button>
+        <Button>
+          <FaMoneyBill />
+          Buy now!
+        </Button>
       </main>
     </>
   );
