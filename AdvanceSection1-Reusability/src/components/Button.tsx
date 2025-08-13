@@ -1,14 +1,9 @@
-// import type { ReactNode } from "react";
-
-// type ButtonProps = {
-//   children: ReactNode;
-//   onClick: () => void;
-// };
-
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
+  variant: "red" | "blue" | "green";
 };
 
-export default function Button(props: ButtonProps) {
-  return <button {...props}>{props.children}</button>;
+export default function Button({ children, variant, ...rest }: ButtonProps) {
+  console.log(variant);
+  return <button {...rest}>{children}</button>;
 }
