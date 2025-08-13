@@ -10,7 +10,19 @@ function App() {
   return (
     <>
       <main>
-        <Button size="sm" className="green">
+        <Button size="lg">
+          <FcGoogle />
+          Log in with Google
+        </Button>
+        <Button variant="success">
+          <FcGoogle />
+          Log in with Google
+        </Button>
+        <Button size="lg" variant="warning">
+          <FcGoogle />
+          Log in with Google
+        </Button>
+        <Button size="sm" variant="danger">
           <FcGoogle />
           Log in with Google
         </Button>

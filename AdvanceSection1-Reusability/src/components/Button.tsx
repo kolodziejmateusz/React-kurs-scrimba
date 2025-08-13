@@ -2,20 +2,21 @@ import classnames from "classnames";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
-  size: "sm" | "lg";
+  size?: "sm" | "lg";
+  variant?: "success" | "warning" | "danger";
 };
 
 export default function Button({
   children,
   size,
+  variant,
   className,
   ...rest
 }: ButtonProps) {
   const sizeClass = size ? `button-${size}` : "";
-  // if (size === "sm") sizeClass = "button-small";
-  // if (size === "lg") sizeClass = "button-large";
+  const variantClass = variant ? `button-${variant}` : "";
 
-  const allClasses = classnames(sizeClass, className);
+  const allClasses = classnames(sizeClass, variantClass, className);
   return (
     <button className={allClasses} {...rest}>
       {children}
