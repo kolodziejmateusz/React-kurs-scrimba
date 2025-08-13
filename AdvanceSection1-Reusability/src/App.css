@@ -33,7 +33,19 @@ button {
 
 button > svg {
   margin-right: 7px;
-  color: green;
   width: 25px;
   height: 25px;
+}
+
+button.button-small {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+button.button-large {
+  padding: 30px 40px;
+}
+
+.green {
+  color: green;
 }
