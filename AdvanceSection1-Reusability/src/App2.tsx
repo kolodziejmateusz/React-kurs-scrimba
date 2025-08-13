@@ -5,8 +5,7 @@ function App() {
   return (
     <>
       <main>
-        {/* <Button text="click" /> */}
-        <Button>Cześć</Button>
+        <Button>dwa</Button>
       </main>
     </>
   );
