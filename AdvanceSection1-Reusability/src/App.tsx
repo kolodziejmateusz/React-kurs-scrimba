@@ -1,14 +1,18 @@
 import "./App.css";
 import Button from "./components/Button";
-import { FaMoneyBill } from "react-icons/fa6";
+import { FcGoogle } from "react-icons/fc";
 
 function App() {
+  function onClick(): void {
+    console.log("Logging in...");
+  }
+
   return (
     <>
       <main>
-        <Button>
-          <FaMoneyBill />
-          Buy now!
+        <Button onClick={onClick} >
+          <FcGoogle/>
+          Log in with Google
         </Button>
       </main>
     </>
