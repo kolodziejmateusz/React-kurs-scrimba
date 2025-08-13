@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <main>
-        <Button size="lg" className="green">
+        <Button size="sm" className="green">
           <FcGoogle />
           Log in with Google
         </Button>
