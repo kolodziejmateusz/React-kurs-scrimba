@@ -2,64 +2,74 @@
   box-sizing: border-box;
 }
 
+:root {
+  --navy: #1f2937;
+  --pink: #da6aec;
+  --red: #f43f5e;
+  --blue: #2f74dc;
+  --green: #22cd90;
+}
+
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #e9e3ff;
+  background-color: #2f2f2f;
 }
 
-main {
-  height: 100vh;
-  width: 100vw;
+.avatar {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
+  border: 0.3rem solid white;
 }
 
-button {
-  background-color: #e5e7eb;
-  color: #4b5563;
-  border: 1px solid #6b7280;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  font-weight: 700;
-  padding: 9px 17px;
-  border-radius: 6px;
-  line-height: 24px;
+.avatar > img {
+  width: 100%;
+}
+
+.avatar-letters {
+  background-color: var(--red);
+  color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-family: "Karla", sans-serif;
 }
 
-button > svg {
-  margin-right: 7px;
-  width: 25px;
-  height: 25px;
+.avatar-icon {
+  background-color: var(--navy);
 }
 
-button.button-sm {
-  padding: 7px 11px;
-  font-size: 12px;
+.avatar > svg {
+  height: 100%;
+  width: 100%;
+  transform: translateY(20px);
+  color: whitesmoke;
 }
 
-button.button-lg {
-  padding: 13px 25px;
+/*
+Classes below will help with rendering random 
+background colors for the extra credit
+*/
+.navy {
+  background-color: #1f2937;
 }
 
-button.button-success {
-  color: #047857;
-  background-color: #ecfdf5;
-  border-color: #047857;
+.pink {
+  background-color: #da6aec;
 }
 
-button.button-warning {
-  color: #fbbf24;
-  background-color: #fffbeb;
-  border-color: #fbbf24;
+.red {
+  background-color: #f43f5e;
 }
 
-button.button-danger {
-  color: #f87171;
-  background-color: #fef2f2;
-  border-color: #f87171;
+.blue {
+  background-color: #2f74dc;
+}
+
+.green {
+  background-color: #22cd90;
 }

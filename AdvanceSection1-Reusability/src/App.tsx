@@ -1,32 +1,21 @@
 import "./App.css";
-import Button from "./components/Button";
-import { FcGoogle } from "react-icons/fc";
+import Avatar from "./components/Avatar";
 
 function App() {
-  // function onClick(): void {
-  //   console.log("Logging in...");
-  // }
-
   return (
     <>
-      <main>
-        <Button size="lg">
-          <FcGoogle />
-          Log in with Google
-        </Button>
-        <Button variant="success">
-          <FcGoogle />
-          Log in with Google
-        </Button>
-        <Button size="lg" variant="warning">
-          <FcGoogle />
-          Log in with Google
-        </Button>
-        <Button size="sm" variant="danger">
-          <FcGoogle />
-          Log in with Google
-        </Button>
-      </main>
+      <>
+        <Avatar
+          src="https://shebang.pl/wp-content/uploads/2023/03/xsciezka-do-ksiezyca.webp.pagespeed.ic.RCigwfhC0A.webp"
+          alt="Bob Ziroll"
+        />
+        <br />
+        <Avatar>BZ</Avatar>
+        <br />
+        <Avatar>MK</Avatar>
+        <br />
+        <Avatar />
+      </>
     </>
   );
 }
