@@ -1,9 +1,7 @@
-
-
-export default function MenuDropdown({ items } : { items : string[]}) {
+export default function MenuDropdown({ children }: { children: string[] }) {
   return (
     <div className="menu-dropdown">
-      {items.map((item) => (
+      {children.map((item) => (
         <div className="menu-item" key={item}>
           {item}
         </div>

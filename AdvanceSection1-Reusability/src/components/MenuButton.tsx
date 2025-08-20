@@ -1,10 +1,10 @@
 import Button from "./Button";
 
 type MenuButtonProps = {
-  buttonText: string;
+  children: string;
   onClick: () => void;
 };
 
-export default function MenuButton({ buttonText, onClick }: MenuButtonProps) {
-  return <Button onClick={onClick}>{buttonText}</Button>;
+export default function MenuButton({ children, onClick }: MenuButtonProps) {
+  return <Button onClick={onClick}>{children}</Button>;
 }

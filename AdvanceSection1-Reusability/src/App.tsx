@@ -1,5 +1,8 @@
+import React from "react";
 import "./App.css";
 import Menu from "./components/Menu";
+import MenuButton from "./components/MenuButton";
+import MenuDropdown from "./components/MenuDropdown";
 
 /**
  * Challenge:
@@ -21,13 +24,22 @@ import Menu from "./components/Menu";
  */
 
 function App() {
+  const [open, setOpen] = React.useState<boolean>(true);
+
+  function toggle() {
+    setOpen((prevOpen) => !prevOpen);
+  }
   return (
     <>
       <>
-        <Menu
-          buttonText="Sports"
-          items={["Tennis", "Pickleball", "Racquetball", "Squash"]}
-        />
+        <Menu>
+          <MenuButton onClick={toggle}>Sports</MenuButton>
+          {open && (
+            <MenuDropdown>
+              {["Tennis", "Pickleball", "Racquetball", "Squash"]}
+            </MenuDropdown>
+          )}
+        </Menu>
       </>
     </>
   );

@@ -1,13 +1,8 @@
-import React from "react";
-import MenuButton from "./MenuButton";
-import MenuDropdown from "./MenuDropdown";
-
 type MenuProps = {
-  buttonText: string;
-  items: string[];
+  children: React.ReactNode;
 };
 
-export default function Menu({ buttonText = "Menu", items }: MenuProps) {
+export default function Menu({ children }: MenuProps) {
   /**
    * Note: leave the div className="menu" here and render
    * the children inside that div. Notice this component will become
@@ -19,17 +14,6 @@ export default function Menu({ buttonText = "Menu", items }: MenuProps) {
    * new version won't be using them, but we'll come back to them
    * later.
    */
-  const [open, setOpen] = React.useState<boolean>(true);
 
-  function toggle() {
-    setOpen((prevOpen) => !prevOpen);
-  }
-
-  return (
-    <div className="menu">
-      <MenuButton buttonText={buttonText} onClick={toggle} />
-
-      {open && <MenuDropdown items={items} />}
-    </div>
-  );
+  return <div className="menu">{children}</div>;
 }
