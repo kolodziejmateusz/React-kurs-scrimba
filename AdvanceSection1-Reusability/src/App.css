@@ -2,74 +2,96 @@
   box-sizing: border-box;
 }
 
-:root {
-  --navy: #1f2937;
-  --pink: #da6aec;
-  --red: #f43f5e;
-  --blue: #2f74dc;
-  --green: #22cd90;
-}
-
 body {
   background-color: #2f2f2f;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: Inter;
 }
 
-.avatar {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+button {
+  background-color: #e5e7eb;
+  color: #4b5563;
+  border: 1px solid #6b7280;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 9px 17px;
+  border-radius: 6px;
+  line-height: 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 0.3rem solid white;
 }
 
-.avatar > img {
-  width: 100%;
+button:focus {
+  outline: none;
 }
 
-.avatar-letters {
-  background-color: var(--red);
-  color: white;
+button.button-sm {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+button.button-lg {
+  padding: 13px 25px;
+}
+
+button.button-success {
+  color: #047857;
+  background-color: #ecfdf5;
+  border-color: #047857;
+}
+
+button.button-warning {
+  color: #fbbf24;
+  background-color: #fffbeb;
+  border-color: #fbbf24;
+}
+
+button.button-danger {
+  color: #f87171;
+  background-color: #fef2f2;
+  border-color: #f87171;
+}
+
+.menu {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-button {
+  background-color: white;
+}
+
+.menu-dropdown {
+  position: absolute;
+  left: 0;
+  margin-top: 3px;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.menu-item {
+  color: #4b5563;
+  padding: 0.75rem;
+  cursor: pointer;
+  min-width: 100px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
-  font-family: "Karla", sans-serif;
+  align-items: center;
+  user-select: none;
 }
 
-.avatar-icon {
-  background-color: var(--navy);
+.menu-item:hover {
+  background-color: whitesmoke;
 }
 
-.avatar > svg {
-  height: 100%;
-  width: 100%;
-  transform: translateY(20px);
-  color: whitesmoke;
-}
-
-/*
-Classes below will help with rendering random 
-background colors for the extra credit
-*/
-.navy {
-  background-color: #1f2937;
-}
-
-.pink {
-  background-color: #da6aec;
-}
-
-.red {
-  background-color: #f43f5e;
-}
-
-.blue {
-  background-color: #2f74dc;
-}
-
-.green {
-  background-color: #22cd90;
+.menu-item:not(:last-child) {
+  border-bottom: 1px solid #6b7280;
 }
