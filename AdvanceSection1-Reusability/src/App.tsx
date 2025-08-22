@@ -3,6 +3,7 @@ import "./App.css";
 import Menu from "./components/Menu";
 import MenuButton from "./components/MenuButton";
 import MenuDropdown from "./components/MenuDropdown";
+import MenuItem from "./components/MenuItem";
 
 /**
  * Challenge:
@@ -24,6 +25,7 @@ import MenuDropdown from "./components/MenuDropdown";
  */
 
 function App() {
+  const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
   const [open, setOpen] = React.useState<boolean>(true);
 
   function toggle() {
@@ -36,7 +38,9 @@ function App() {
           <MenuButton onClick={toggle}>Sports</MenuButton>
           {open && (
             <MenuDropdown>
-              {["Tennis", "Pickleball", "Racquetball", "Squash"]}
+              {sports.map((sport) => (
+                <MenuItem key={sport}>{sport}</MenuItem>
+              ))}
             </MenuDropdown>
           )}
         </Menu>
