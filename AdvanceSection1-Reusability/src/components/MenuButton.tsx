@@ -2,7 +2,7 @@ import Button from "./Button";
 
 type MenuButtonProps = {
   children: string;
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default function MenuButton({ children, onClick }: MenuButtonProps) {
