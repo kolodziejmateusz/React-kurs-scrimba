@@ -1,7 +1,10 @@
 export default function MenuDropdown({
   children,
+  open,
 }: {
   children: React.ReactNode;
+  open? : boolean;
 }) {
-  return <div className="menu-dropdown">{children}</div>;
+  console.log(children);
+  return open ? <div className="menu-dropdown">{children}</div> : null;
 }

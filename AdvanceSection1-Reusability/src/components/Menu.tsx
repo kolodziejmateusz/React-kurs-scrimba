@@ -11,5 +11,11 @@ export default function Menu({ children }: MenuProps) {
     setOpen((prevOpen) => !prevOpen);
   }
 
-  return <div className="menu">{children}</div>;
+  return (
+    <div className="menu">
+      {React.Children.map(children, (child) => {
+        return React.cloneElement(child, { open, toggle });
+      })}
+    </div>
+  );
 }

@@ -2,9 +2,9 @@ import Button from "./Button";
 
 type MenuButtonProps = {
   children: string;
-  onClick?: () => void;
+  toggle?: () => void;
 };
 
-export default function MenuButton({ children, onClick }: MenuButtonProps) {
-  return <Button onClick={onClick}>{children}</Button>;
+export default function MenuButton({ children, toggle }: MenuButtonProps) {
+  return <Button onClick={toggle}>{children}</Button>;
 }
