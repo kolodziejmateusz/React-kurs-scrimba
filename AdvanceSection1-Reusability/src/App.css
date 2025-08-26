@@ -2,74 +2,77 @@
   box-sizing: border-box;
 }
 
-:root {
-  --navy: #1f2937;
-  --pink: #da6aec;
-  --red: #f43f5e;
-  --blue: #2f74dc;
-  --green: #22cd90;
-}
-
 body {
-  background-color: #2f2f2f;
+  margin: 0;
+  padding-left: 0;
 }
 
-.avatar {
-  height: 150px;
-  width: 150px;
-  border-radius: 50%;
-  overflow: hidden;
+.container {
+  height: 100vh;
+  /* padding-left: 1rem; */
+}
+
+header {
+  height: 6rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border: 0.3rem solid white;
+  padding-left: 1rem;
 }
 
-.avatar > img {
-  width: 100%;
+header.light-theme {
+  background-color: #e0f2fe;
+  color: #0c4a6e;
 }
 
-.avatar-letters {
-  background-color: var(--red);
-  color: white;
+header.dark-theme {
+  background-color: #075985;
+  color: #e0f2fe;
+}
+
+header > h1 {
+  margin: 0;
+}
+
+main {
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+
+.container.dark-theme {
+  background-color: #0c4a6e;
+  color: #f0f9ff;
+}
+
+.container.light-theme {
+  background-color: #f0f9ff;
+  color: #0c4a6e;
+}
+
+button {
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  font-weight: 700;
+  padding: 9px 17px;
+  border-radius: 6px;
+  line-height: 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-family: "Karla", sans-serif;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
-.avatar-icon {
-  background-color: var(--navy);
+button:focus {
+  outline: none;
 }
 
-.avatar > svg {
-  height: 100%;
-  width: 100%;
-  transform: translateY(20px);
-  color: whitesmoke;
+button.dark-theme {
+  border: 1px solid #f0f9ff;
+  background-color: #0c4a6e;
+  color: #f0f9ff;
 }
 
-/*
-Classes below will help with rendering random 
-background colors for the extra credit
-*/
-.navy {
-  background-color: #1f2937;
-}
-
-.pink {
-  background-color: #da6aec;
-}
-
-.red {
-  background-color: #f43f5e;
-}
-
-.blue {
-  background-color: #2f74dc;
-}
-
-.green {
-  background-color: #22cd90;
+button.light-theme {
+  border: 1px solid #0c4a6e;
+  background-color: #f0f9ff;
+  color: #0c4a6e;
 }

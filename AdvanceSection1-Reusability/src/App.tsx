@@ -1,22 +1,14 @@
 import "./App.css";
-import Avatar from "./components/Avatar";
+// import React from "react"
+import Header from "./components/Header";
+import Button from "./components/Button";
 
 function App() {
   return (
-    <>
-      <>
-        <Avatar
-          src="https://shebang.pl/wp-content/uploads/2023/03/xsciezka-do-ksiezyca.webp.pagespeed.ic.RCigwfhC0A.webp"
-          alt="Bob Ziroll"
-        />
-        <br />
-        <Avatar>BZ</Avatar>
-        <br />
-        <Avatar>MK</Avatar>
-        <br />
-        <Avatar />
-      </>
-    </>
+    <div className="container dark-theme">
+      <Header />
+      <Button />
+    </div>
   );
 }
 
