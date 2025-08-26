@@ -7,7 +7,7 @@ const ThemeContext = React.createContext("");
 
 function App() {
   return (
-    <ThemeContext.Provider value="light">
+    <ThemeContext.Provider value="dark">
       <div className="container dark-theme">
         <Header />
         <Button />
