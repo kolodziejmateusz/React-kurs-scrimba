@@ -1,8 +1,5 @@
 import "./App.css";
-import Menu from "./components/Menu/Menu";
-import MenuButton from "./components/Menu/MenuButton";
-import MenuDropdown from "./components/Menu/MenuDropdown";
-import MenuItem from "./components/Menu/MenuItem";
+import Menu from "./components/Menu/index";
 
 function App() {
   const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
@@ -11,13 +8,13 @@ function App() {
     <>
       <>
         <Menu>
-          <MenuButton>Sports</MenuButton>
+          <Menu.Button>Sports</Menu.Button>
 
-          <MenuDropdown>
+          <Menu.Dropdown>
             {sports.map((sport) => (
-              <MenuItem key={sport}>{sport}</MenuItem>
+              <Menu.Item key={sport}>{sport}</Menu.Item>
             ))}
-          </MenuDropdown>
+          </Menu.Dropdown>
         </Menu>
       </>
     </>

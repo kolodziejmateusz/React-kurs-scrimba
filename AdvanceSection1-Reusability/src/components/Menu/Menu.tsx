@@ -1,14 +1,7 @@
 import React from "react";
-
-/**
- * Challenge:
- * Part 1:
- * 1. Create new context here in the Menu component. Make sure
- *    to export it from this file as well.
- * 2. Wrap the `div` below with the Context Provider
- * 3. Give the Provider a value of the boolean `false` (represents
- *    the hardcoded `open` state for now - we'll fix this very soon.)
- */
+import MenuButton from "./MenuButton";
+import MenuDropdown from "./MenuDropdown";
+import MenuItem from "./MenuItem";
 
 type MenuProps = {
   children: React.ReactNode;
@@ -17,12 +10,12 @@ type MenuProps = {
 type MenuContextType = {
   open: boolean;
   toggle: () => void;
-  menuId: string
+  menuId: string;
 };
 
 const MenuContext = React.createContext<MenuContextType | null>(null);
 
-export default function Menu({ children }: MenuProps) {
+function MenuRoot({ children }: MenuProps) {
   const [open, setOpen] = React.useState<boolean>(false);
   const menuId = React.useId();
 
@@ -39,4 +32,11 @@ export default function Menu({ children }: MenuProps) {
   );
 }
 
+const Menu = Object.assign(MenuRoot, {
+  Button: MenuButton,
+  Dropdown: MenuDropdown,
+  Item: MenuItem,
+});
+
+export default Menu;
 export { MenuContext };
