@@ -7,6 +7,15 @@ type MenuButtonProps = {
 };
 
 export default function MenuButton({ children }: MenuButtonProps) {
-  const { toggle } = React.useContext(MenuContext)!;
-  return <Button onClick={toggle}>{children}</Button>;
+  const { toggle, open, menuId } = React.useContext(MenuContext)!;
+  return (
+    <Button
+      onClick={toggle}
+      aria-expanded={open}
+      aria-haspopup="true"
+      aria-controls={menuId}
+    >
+      {children}
+    </Button>
+  );
 }

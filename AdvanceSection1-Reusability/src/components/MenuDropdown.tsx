@@ -6,6 +6,10 @@ type MenuDropdownProps = {
 };
 
 export default function MenuDropdown({ children }: MenuDropdownProps) {
-  const { open } = React.useContext(MenuContext)!;
-  return open ? <div className="menu-dropdown">{children}</div> : null;
+  const { open, menuId } = React.useContext(MenuContext)!;
+  return open ? (
+    <div className="menu-dropdown" id={menuId}>
+      {children}
+    </div>
+  ) : null;
 }
