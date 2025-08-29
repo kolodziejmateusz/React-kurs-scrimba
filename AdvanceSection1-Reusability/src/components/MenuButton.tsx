@@ -1,10 +1,12 @@
+import React from "react";
 import Button from "./Button";
+import { MenuContext } from "./Menu";
 
 type MenuButtonProps = {
   children: string;
-  // toggle?: () => void;
 };
 
 export default function MenuButton({ children }: MenuButtonProps) {
-  return <Button>{children}</Button>;
+  const { toggle } = React.useContext(MenuContext)!;
+  return <Button onClick={toggle}>{children}</Button>;
 }

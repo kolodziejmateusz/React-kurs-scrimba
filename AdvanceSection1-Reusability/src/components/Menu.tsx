@@ -14,17 +14,22 @@ type MenuProps = {
   children: React.ReactNode;
 };
 
-const MenuContext = React.createContext<boolean>(false);
+type MenuContextType = {
+  open: boolean;
+  toggle: () => void;
+};
+
+const MenuContext = React.createContext<MenuContextType | null>(null);
 
 export default function Menu({ children }: MenuProps) {
-  // const [open, setOpen] = React.useState<boolean>(true);
+  const [open, setOpen] = React.useState<boolean>(false);
 
-  // function toggle() {
-  //   setOpen((prevOpen) => !prevOpen);
-  // }
+  function toggle() {
+    setOpen((prevOpen) => !prevOpen);
+  }
 
   return (
-    <MenuContext.Provider value={true}>
+    <MenuContext.Provider value={{ open, toggle }}>
       <div className="menu">{children}</div>
     </MenuContext.Provider>
   );
