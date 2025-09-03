@@ -9,6 +9,8 @@ function App() {
         <Toggle.Button>
           <Star />
         </Toggle.Button>
+        <Toggle.On>toggle is on</Toggle.On>
+        <Toggle.Off>toggle is off</Toggle.Off>
       </Toggle>
     </>
   );
