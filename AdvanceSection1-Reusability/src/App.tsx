@@ -1,16 +1,19 @@
 import "./App.css";
-import Star from "./components/Star";
 import Toggle from "./components/Toggle/index";
+import { BsStar, BsStarFill } from "react-icons/bs";
 
 function App() {
   return (
     <>
       <Toggle>
         <Toggle.Button>
-          <Star />
+          <Toggle.On>
+            <BsStarFill className="star filled" />
+          </Toggle.On>
+          <Toggle.Off>
+            <BsStar className="star" />
+          </Toggle.Off>
         </Toggle.Button>
-        <Toggle.On>toggle is on</Toggle.On>
-        <Toggle.Off>toggle is off</Toggle.Off>
       </Toggle>
     </>
   );
