@@ -1,7 +1,4 @@
 import React from "react";
-import MenuButton from "./MenuButton";
-import MenuDropdown from "./MenuDropdown";
-import MenuItem from "./MenuItem";
 
 type MenuProps = {
   children: React.ReactNode;
@@ -15,7 +12,7 @@ type MenuContextType = {
 
 const MenuContext = React.createContext<MenuContextType | null>(null);
 
-function MenuRoot({ children }: MenuProps) {
+export default function Menu({ children }: MenuProps) {
   const [open, setOpen] = React.useState<boolean>(false);
   const menuId = React.useId();
 
@@ -32,11 +29,4 @@ function MenuRoot({ children }: MenuProps) {
   );
 }
 
-const Menu = Object.assign(MenuRoot, {
-  Button: MenuButton,
-  Dropdown: MenuDropdown,
-  Item: MenuItem,
-});
-
-export default Menu;
 export { MenuContext };

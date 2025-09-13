@@ -3,8 +3,16 @@ import MenuButton from "./MenuButton";
 import MenuDropdown from "./MenuDropdown";
 import MenuItem from "./MenuItem";
 
-Menu.Button = MenuButton;
-Menu.Dropdown = MenuDropdown;
-Menu.Item = MenuItem;
+type CompoundMenu = typeof Menu & {
+  Button: typeof MenuButton;
+  Dropdown: typeof MenuDropdown;
+  Item: typeof MenuItem;
+};
 
-export default Menu;
+const CompoundMenu = Menu as CompoundMenu;
+
+CompoundMenu.Button = MenuButton;
+CompoundMenu.Dropdown = MenuDropdown;
+CompoundMenu.Item = MenuItem;
+
+export default CompoundMenu;
