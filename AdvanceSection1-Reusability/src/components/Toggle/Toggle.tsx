@@ -14,13 +14,18 @@ const ToggleContext = React.createContext<ToggleContextType | null>(null);
 
 export default function Toggle({ children, onToggle }: ToggleProps) {
   const [on, setOn] = React.useState<boolean>(false);
+  const firstRender = React.useRef<boolean>(true);
 
   function toggle() {
     setOn((prev) => !prev);
   }
 
   React.useEffect(() => {
-    onToggle();
+    if (firstRender.current) {
+      firstRender.current = false;
+    } else {
+      onToggle();
+    }
   }, [on]);
 
   return (
