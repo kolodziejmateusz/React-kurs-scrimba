@@ -2,7 +2,7 @@ import React from "react";
 
 type ToggleProps = {
   children: React.ReactNode;
-  onToggle: () => void;
+  onToggle?: () => void;
 };
 
 type ToggleContextType = {
