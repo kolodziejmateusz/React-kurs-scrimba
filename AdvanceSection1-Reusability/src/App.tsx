@@ -1,25 +1,12 @@
 import "./App.css";
 import Toggle from "./components/Toggle/index";
-// import Menu from "./components/Menu/index";
-// import Star from "./components/Star";
 
 function App() {
   // const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
 
-  /**
-   * Challenge:
-   * Part 1:
-   * Create a ToggleDisplay component and attach
-   * it to Toggle as Toggle.Display.
-   *
-   * It should grab the `on` value from the Toggle context
-   * and render children by calling children as a function,
-   * passing the `on` value to it. (E.g. children(on)).
-   */
-
   return (
     <>
-      <Toggle>
+      <Toggle onToggle={() => console.log("Toggled")}>
         <Toggle.Button>
           <Toggle.Display>
             {(isFilled) => {
