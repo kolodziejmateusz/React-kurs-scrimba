@@ -8,7 +8,7 @@ import {
 export default function useEffectOnUpdate(
   effectFunction: EffectCallback,
   deps: DependencyList
-) {
+): void {
   const firstRender = useRef(true);
 
   useEffect(() => {
