@@ -15,12 +15,6 @@ type ToggleContextType = {
 const ToggleContext = React.createContext<ToggleContextType | null>(null);
 
 export default function Toggle({ children, onToggle = () => {} }: ToggleProps) {
-  // const [on, setOn] = React.useState<boolean>(false);
-
-  // function toggle() {
-  //   setOn((prev) => !prev);
-  // }
-
   const [on, toggle] = useToggle();
 
   useEffectOnUpdate(onToggle, [on]);
