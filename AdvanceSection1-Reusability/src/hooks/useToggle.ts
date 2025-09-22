@@ -1,17 +1,22 @@
 import React from "react";
 import useEffectOnUpdate from "./useEffectOnUpdate";
 
-export default function useToggle(
-  onOpen: () => void = () => {},
-  initialValue: boolean = false
-): [boolean, () => void] {
+type useToggleOptions = {
+  initialValue?: boolean;
+  onToggle?: () => void;
+};
+
+export default function useToggle({
+  initialValue = false,
+  onToggle = () => {},
+}: useToggleOptions): [boolean, () => void] {
   const [on, setOn] = React.useState<boolean>(initialValue);
 
   function toggle() {
     setOn((prev) => !prev);
   }
 
-  useEffectOnUpdate(onOpen, [on]);
+  useEffectOnUpdate(onToggle, [on]);
 
   return [on, toggle];
 }
