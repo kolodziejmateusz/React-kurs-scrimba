@@ -1,9 +1,14 @@
 import React from "react";
-import Toggle from "../Toggle/index";
+import useToggle from "../../hooks/useToggle";
 
 type MenuProps = {
   children: React.ReactNode;
   onOpen?: () => void;
+};
+
+type MenuContextType = {
+  open: boolean;
+  toggleOpen: () => void;
 };
 
 /**
@@ -15,12 +20,17 @@ type MenuProps = {
  *    Call the variables "open" and "toggleOpen".
  */
 
-export default function Menu({ children, onOpen }: MenuProps) {
+const MenuContext = React.createContext<MenuContextType | null>(null);
+
+export default function Menu({ children }: MenuProps) {
+  const [open, toggleOpen] = useToggle();
   return (
-    <Toggle onToggle={onOpen}>
+    <MenuContext.Provider value={{ open, toggleOpen }}>
       <div className="menu" role="menu">
         {children}
       </div>
-    </Toggle>
+    </MenuContext.Provider>
   );
 }
+
+export { MenuContext };

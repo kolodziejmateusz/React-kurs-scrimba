@@ -1,14 +1,11 @@
 import React from "react";
-import Toggle from "../Toggle/index";
+import { MenuContext } from "./Menu";
 
 type MenuDropdownProps = {
   children: React.ReactNode;
 };
 
 export default function MenuDropdown({ children }: MenuDropdownProps) {
-  return (
-    <Toggle.On>
-      <div className="menu-dropdown">{children}</div>
-    </Toggle.On>
-  );
+  const { open } = React.useContext(MenuContext)!;
+  return open ? <div className="menu-dropdown">{children}</div> : null;
 }
