@@ -1,12 +1,7 @@
 import useToggle from "../hooks/useToggle";
-// import Toggle from "./Toggle/index";
 import { BsStar, BsStarFill } from "react-icons/bs";
 
-type StarProps = {
-  onChange?: () => void;
-};
-
-export default function Star({ onChange }: StarProps) {
+export default function Star() {
   const [on, toggle] = useToggle();
   return (
     <>
@@ -16,15 +11,5 @@ export default function Star({ onChange }: StarProps) {
         <BsStar className="star" onClick={toggle} />
       )}
     </>
-    // <Toggle onToggle={onChange}>
-    //   <Toggle.Button>
-    //     <Toggle.On>
-    //       <BsStarFill className="star filled" />
-    //     </Toggle.On>
-    //     <Toggle.Off>
-    //       <BsStar className="star" />
-    //     </Toggle.Off>
-    //   </Toggle.Button>
-    // </Toggle>
   );
 }

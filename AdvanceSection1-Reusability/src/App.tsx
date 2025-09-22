@@ -1,38 +1,20 @@
 import "./App.css";
-import Star from "./components/Star";
-// import Toggle from "./components/Toggle/index";
+import Menu from "./components/Menu";
 
 function App() {
-  // const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"];
-
   return (
     <>
-      <Star />
+      <Menu>
+        <Menu.Button>Menu</Menu.Button>
+        <Menu.Dropdown>
+          <Menu.Item>Home</Menu.Item>
+          <Menu.Item>About</Menu.Item>
+          <Menu.Item>Contact</Menu.Item>
+          <Menu.Item>Blog</Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
     </>
   );
-}
-// <>
-//   <Toggle onToggle={() => console.log("Toggled")}>
-//     <Toggle.Button>
-//       <Toggle.Display>
-//         {(isFilled) => {
-//           return <div className={isFilled ? "box filled" : "box"}></div>;
-//         }}
-//       </Toggle.Display>
-//     </Toggle.Button>
-//   </Toggle>
-// </>
-
-{
-  /* <Star onChange={() => console.log("Star was clicked")} />
-      <Menu onOpen={() => console.log("Menu was clicked")}>
-        <Menu.Button>Sports</Menu.Button>
-        <Menu.Dropdown>
-          {sports.map((sport) => (
-            <Menu.Item key={sport}>{sport}</Menu.Item>
-          ))}
-        </Menu.Dropdown>
-      </Menu> */
 }
 
 export default App;
