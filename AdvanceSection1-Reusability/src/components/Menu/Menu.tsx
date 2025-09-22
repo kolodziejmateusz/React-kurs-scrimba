@@ -22,8 +22,8 @@ type MenuContextType = {
 
 const MenuContext = React.createContext<MenuContextType | null>(null);
 
-export default function Menu({ children }: MenuProps) {
-  const [open, toggleOpen] = useToggle();
+export default function Menu({ children, onOpen }: MenuProps) {
+  const [open, toggleOpen] = useToggle(onOpen);
   return (
     <MenuContext.Provider value={{ open, toggleOpen }}>
       <div className="menu" role="menu">

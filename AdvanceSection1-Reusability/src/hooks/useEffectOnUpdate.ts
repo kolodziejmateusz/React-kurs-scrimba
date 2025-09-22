@@ -17,5 +17,6 @@ export default function useEffectOnUpdate(
     } else {
       effectFunction();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, deps);
 }

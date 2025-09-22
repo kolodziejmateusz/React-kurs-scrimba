@@ -4,7 +4,7 @@ import Menu from "./components/Menu";
 function App() {
   return (
     <>
-      <Menu>
+      <Menu onOpen={() => console.log("Opened/closed")}>
         <Menu.Button>Menu</Menu.Button>
         <Menu.Dropdown>
           <Menu.Item>Home</Menu.Item>
