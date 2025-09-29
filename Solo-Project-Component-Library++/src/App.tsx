@@ -1,12 +1,12 @@
-
 import './App.css'
+import Badge from './badge/Badge'
 
 function App() {
 
 
   return (
     <>
-      <div>hej</div>
+      <Badge>Mateusz</Badge>
     </>
   )
 }
