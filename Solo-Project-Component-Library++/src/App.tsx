@@ -1,37 +1,52 @@
 import "./App.css";
-import Badge from "./components/badge/Badge";
+import Banner from "./components/banner/Banner";
+import BannerTitle from "./components/banner/BannerTitle";
+import BannerText from "./components/banner/BannerText";
 
 function App() {
-  const badgeColors = [
-    "grey",
-    "red",
-    "yellow",
-    "green",
-    "blue",
-    "indigo",
-    "purple",
-    "pink",
-  ] as const;
-  const capitalize = (str: string) =>
-    str.charAt(0).toUpperCase() + str.slice(1);
-
   return (
     <>
-      {badgeColors.map((color, index) => (
-        <Badge key={index} color={color} variant="square">
-          {capitalize(color)}
-        </Badge>
-      ))}
+      <Banner>
+        <BannerTitle>Tytuł</BannerTitle>
+        <BannerText>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          consectetur iste praesentium.
+        </BannerText>
+      </Banner>
+      <Banner variant="warning">
+        <BannerTitle>Tytuł</BannerTitle>
+        <BannerText>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          consectetur iste praesentium.
+        </BannerText>
+      </Banner>
+      <Banner variant="error">
+        <BannerTitle>Tytuł</BannerTitle>
+        <BannerText>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          consectetur iste praesentium.
+        </BannerText>
+      </Banner>
+      <Banner variant="neutral">
+        <BannerTitle>Tytuł</BannerTitle>
+        <BannerText>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+          consectetur iste praesentium.
+        </BannerText>
+      </Banner>
 
-      {badgeColors.map((color, index) => (
-        <Badge key={index} color={color} variant="pill">
-          {capitalize(color)}
-        </Badge>
-      ))}
-
-      <Badge color="blue" variant="pill">
-        Mateusz
-      </Badge>
+      <Banner>
+        <BannerTitle>Tytuł</BannerTitle>
+      </Banner>
+      <Banner variant="warning">
+        <BannerTitle>Tytuł</BannerTitle>
+      </Banner>
+      <Banner variant="error">
+        <BannerTitle>Tytuł</BannerTitle>
+      </Banner>
+      <Banner variant="neutral">
+        <BannerTitle>Tytuł</BannerTitle>
+      </Banner>
     </>
   );
 }
