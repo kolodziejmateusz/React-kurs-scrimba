@@ -1,51 +1,49 @@
 import "./App.css";
-import Banner from "./components/banner/Banner";
-import BannerTitle from "./components/banner/BannerTitle";
-import BannerText from "./components/banner/BannerText";
+import Banner from "./components/banner/index";
 
 function App() {
   return (
     <>
       <Banner>
-        <BannerTitle>Tytuł</BannerTitle>
-        <BannerText>
+        <Banner.Title>Tytuł</Banner.Title>
+        <Banner.Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
           consectetur iste praesentium.
-        </BannerText>
+        </Banner.Text>
       </Banner>
       <Banner variant="warning">
-        <BannerTitle>Tytuł</BannerTitle>
-        <BannerText>
+        <Banner.Title>Tytuł</Banner.Title>
+        <Banner.Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
           consectetur iste praesentium.
-        </BannerText>
+        </Banner.Text>
       </Banner>
       <Banner variant="error">
-        <BannerTitle>Tytuł</BannerTitle>
-        <BannerText>
+        <Banner.Title>Tytuł</Banner.Title>
+        <Banner.Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
           consectetur iste praesentium.
-        </BannerText>
+        </Banner.Text>
       </Banner>
       <Banner variant="neutral">
-        <BannerTitle>Tytuł</BannerTitle>
-        <BannerText>
+        <Banner.Title>Tytuł</Banner.Title>
+        <Banner.Text>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
           consectetur iste praesentium.
-        </BannerText>
+        </Banner.Text>
       </Banner>
 
       <Banner>
-        <BannerTitle>Tytuł</BannerTitle>
+        <Banner.Title>Tytuł</Banner.Title>
       </Banner>
       <Banner variant="warning">
-        <BannerTitle>Tytuł</BannerTitle>
+        <Banner.Title>Tytuł</Banner.Title>
       </Banner>
       <Banner variant="error">
-        <BannerTitle>Tytuł</BannerTitle>
+        <Banner.Title>Tytuł</Banner.Title>
       </Banner>
       <Banner variant="neutral">
-        <BannerTitle>Tytuł</BannerTitle>
+        <Banner.Title>Tytuł</Banner.Title>
       </Banner>
     </>
   );
